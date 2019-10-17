@@ -1,10 +1,11 @@
-package com.example.mweather.adapter;
+package com.example.mweather.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,9 +24,11 @@ public class ForeCastAdapter extends RecyclerView.Adapter<ForeCastAdapter.ViewHo
 
     private Context context;
     private List<WeatherList> weatherLists;
+    private int count = 1;
 
 
     public ForeCastAdapter(Context context, List<WeatherList> weatherLists) {
+
         this.context = context;
         this.weatherLists = weatherLists;
     }
@@ -42,7 +45,6 @@ public class ForeCastAdapter extends RecyclerView.Adapter<ForeCastAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         WeatherList weatherList = weatherLists.get(position);
 
-        Random random = new Random();
 
 
         String icon = weatherList.getWeather().get(0).getIcon();
@@ -51,15 +53,21 @@ public class ForeCastAdapter extends RecyclerView.Adapter<ForeCastAdapter.ViewHo
         String time = SDF.getTime(weatherList.getDt());
         String temp = weatherList.getMain().getTemp().toString() + context.getString(R.string.degree_celsius);
 
-       /* String dayName = SDF.getDay(weatherList.getDt());
+        String dayName = SDF.getDay(weatherList.getDt());
+        /*
         String date = SDF.getDate(weatherList.getDt());
         String minTemp = weatherList.getMain().getTempMin().toString();
         String maxTemp = weatherList.getMain().getTempMax().toString();
         String status = weatherList.getWeather().get(0).getDescription();*/
 
+        if (count == 1){
+            holder.binding.getRoot().setBackgroundColor(ContextCompat.getColor(context,R.color.colorAccent));
+            count = 2;
+        }
         holder.binding.timeTV.setText(time);
         holder.binding.tempTV.setText(temp);
-        Picasso.get().load(iconUrl).into(holder.binding.iconIV);
+        holder.binding.dayNameTV.setText(dayName);
+        Picasso.get().load(iconUrl).resize(100,100).into(holder.binding.iconIV);
 
 
 

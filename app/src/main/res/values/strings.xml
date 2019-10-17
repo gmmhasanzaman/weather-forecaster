@@ -6,12 +6,14 @@
     <string name="add_city">Add City</string>
     <string name="about">About</string>
     <string name="humidity">Humidity</string>
-    <string name="wind">Wind: </string>
-    <string name="pressure">Pressure:</string>
-    <string name="sunrise">Sunrise:</string>
-    <string name="sunset">Sunset:</string>
+    <string name="wind">Wind</string>
+    <string name="pressure">Pressure</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunset">Sunset</string>
     <string name="degree_celsius"> °C</string>
     <string name="degree_fahrenheit"> °F</string>
+    <string name="min">Min</string>
+    <string name="max">Max</string>
 
 
     <string-array name="bd_districts">

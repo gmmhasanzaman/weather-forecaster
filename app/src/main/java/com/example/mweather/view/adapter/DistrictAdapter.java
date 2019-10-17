@@ -1,4 +1,4 @@
-package com.example.mweather.adapter;
+package com.example.mweather.view.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

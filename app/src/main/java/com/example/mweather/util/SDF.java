@@ -30,12 +30,12 @@ public class SDF {
     public static String getDay(long timeInSeconds){
         // current date
         Date currentDate = Calendar.getInstance().getTime();
-        SimpleDateFormat formatter = new SimpleDateFormat("EEEE");
+        SimpleDateFormat formatter = new SimpleDateFormat("EEE");
         String today = formatter.format(currentDate);
 
         // api date
         Date day = new Date(timeInSeconds * 1000);
-        SimpleDateFormat datFormat = new SimpleDateFormat("EEEE");
+        SimpleDateFormat datFormat = new SimpleDateFormat("EEE");
         //SimpleDateFormat formatterAPIdate = new SimpleDateFormat("dd/MM/yyyy");
         String dayNameString = datFormat.format(day);
 
