@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
                     String description = wr.getWeather().get(0).getMain().toUpperCase();
 
                     double currentTemp = wr.getMain().getTemp();
-                    String stringDate = SDF.getDate(wr.getDt());
+                    //String stringDate = SDF.getDate(wr.getDt());
                     double lowTemp = wr.getMain().getTempMin();
                     double highTemp = wr.getMain().getTempMax();
                     double humidity = wr.getMain().getHumidity();
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                     String sunrise = SDF.getTime(wr.getSys().getSunrise());
                     String sunset = SDF.getTime(wr.getSys().getSunset());
 
-                   /* binding.statusTV.setText(description);
+                    /*binding.statusTV.setText(description);
                     binding.dateTV.setText(stringDate);*/
 
                     binding.placeTV.setText(placeName);
